@@ -50,6 +50,12 @@
         &:nth-child(5) { left: calc(50% + 440px); }
         &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
       }
+      .slider {
+        display: flex; /* Horizontal layout for slider */
+        align-items: center; /* Center images */
+        justify-content: center; /* Center slider content */
+        overflow: hidden; /* Clip extra content */
+      }
       
       .content {
         width: min(30vw,400px);
@@ -110,8 +116,9 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 5;
-        user-select: none;
-      
+        display: flex; /* Make sure it's visible */
+  opacity: 1; /* No fading effect */
+  transition: none; 
         & .btn {
           background-color: rgba(255,255,255,0.5);
           color: rgba(0,0,0,0.7);
@@ -120,8 +127,7 @@
           padding: 0.75rem;
           border-radius: 50%;
           cursor: pointer;
-          transition: background-color 0.3s ease; 
-      
+          
           &:hover {
             background-color: rgba(255,255,255,0.3);
           }
@@ -143,6 +149,19 @@
           &:nth-child(5) { left: calc(50% + 340px); }
           &:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
         }
+        .item {
+          width: 85%; /* Make the images smaller */
+          height: auto; /* Adjust the height proportionally */
+          border-radius: 15px; /* Smaller border radius */
+        }
+      
+        .nav {
+          bottom: 0.5rem; /* Adjust position for smaller screens */
+        }
+      
+        .nav .btn {
+          padding: 0.5rem; /* Smaller buttons for mobile */
+        }
       }
       
       @media (width < 650px) {
@@ -151,10 +170,21 @@
           & .description  { font-size: 0.65rem; }
           & button        { font-size: 0.7rem; }
         }
+
         .item {
-          width: 130px;
-          height: 220px;
+          width: 85%; /* Make the images smaller */
+          height: auto; /* Adjust the height proportionally */
+          border-radius: 15px; /* Smaller border radius */
+        }
       
+        .nav {
+          bottom: 0.5rem; /* Adjust position for smaller screens */
+        }
+      
+        .nav .btn {
+          padding: 0.5rem; /* Smaller buttons for mobile */
+        }        .item {
+        
           &:nth-child(3) { left: 50%; }
           &:nth-child(4) { left: calc(50% + 140px); }
           &:nth-child(5) { left: calc(50% + 280px); }
